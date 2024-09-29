@@ -1,1 +1,50 @@
-<p>employee-list works!</p>
+<div class="container">
+    <div class="container">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   Add New
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Employee</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-add-employee></app-add-employee>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add Employee</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <th>SI</th>
+                <th>Name</th>
+                <th>Degination</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of emplist">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.degination}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)=" editEmployee()">Edit</button>&nbsp;&nbsp;
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+</div>
